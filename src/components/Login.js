@@ -5,7 +5,7 @@ import { checkValidateData } from '../utils/validate';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../utils/firebase';
 import { addUser } from '../utils/userSlice';
-import { USER_AVATAR } from '../utils/constants';
+import { BG_URL, USER_AVATAR } from '../utils/constants';
 
 const Login = () => {
 
@@ -70,7 +70,7 @@ const Login = () => {
         <Header/>
         <div className='absolute'>
             <img 
-                src="https://assets.nflxext.com/ffe/siteui/vlv3/93da5c27-be66-427c-8b72-5cb39d275279/1bbd2f1c-7a12-4e40-9e9c-603d24709661/LK-en-20240226-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+                src={BG_URL}
                 alt="logo"
             />
         </div>
