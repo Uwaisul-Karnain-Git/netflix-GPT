@@ -21,3 +21,5 @@ export const API_OPTIONS = {
     {identifier: 'spanish', name: 'Spanish'}
   ];
   
+  export const OPEN_AI_GPT_KEY = "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";
+  
