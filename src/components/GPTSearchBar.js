@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import lang from '../utils/languageConstants'
 import openai from '../utils/openai';
@@ -10,6 +10,13 @@ const GPTSearchBar = () => {
   const langKey = useSelector(store => store.config.lang);
   const searchText = useRef(null);
   
+  useEffect(() => {
+    return () => { 
+      // Clear 'gpt Store'
+      dispatch(addGPTMovieResults({movieNames: null, movieResults: null}));
+    }
+  }, []);
+
   // Search movie in TMDB
   const searchMovieTMBD = async (movie) => {
     const data = await fetch(
@@ -33,7 +40,7 @@ const GPTSearchBar = () => {
     // });
 
     // Hard coding the movies list since this API is a paid API
-    const gptResults = "Andaz Apna Apna, Vikram Vedha, Chupke Chupke, Jaane Bhi Do Yaaro, Padosan";
+    const gptResults = "12th Fail, Andaz Apna Apna, Vikram Vedha, Chupke Chupke, Padosan";
     const gptMovies = gptResults.split(", ");
     
     // For each movie, we will search TMDB API
@@ -41,7 +48,7 @@ const GPTSearchBar = () => {
     const tmdbResults = await Promise.all(moviesPromiseArray); // This will be finished only after all 5 promises are resolved
 
     // Store movies in Redux
-    dispatch(addGPTMovieResults(tmdbResults));
+    dispatch(addGPTMovieResults({movieNames: gptMovies, movieResults: tmdbResults}));
   };
 
   return (

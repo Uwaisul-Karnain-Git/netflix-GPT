@@ -7,7 +7,7 @@ export const API_OPTIONS = {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2N2I0ZTFlNjc4MmY4OTBiYzUwZTUxYTE3MWI4ZDBiMiIsInN1YiI6IjY1ZjVjNTg4MzAwOWFhMDE2NDEwODdjNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.v7NItmhKu0YXicuqbT0bQXbVtq-8Tqw_YoUjx0nDV3s'
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2N2I0ZTFlNjc4MmY4OTBiYzUwZTUxYTE3MWI4ZDBiMiIsInN1YiI6IjY1ZjVjNTg4MzAwOWFhMDE2NDEwODdjNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.v7NItmhKu0YXicuqbT0bQXbVtq-8Tqw_YoUjx0nDV3s',
     }
   };
   
@@ -21,5 +21,5 @@ export const API_OPTIONS = {
     {identifier: 'spanish', name: 'Spanish'}
   ];
   
-  export const OPEN_AI_GPT_KEY = "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";
+  export const OPEN_AI_GPT_KEY = process.env.REACT_APP_OPEN_AI_GPT_KEY;
   
