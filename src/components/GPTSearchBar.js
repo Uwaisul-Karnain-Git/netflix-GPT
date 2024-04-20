@@ -40,7 +40,7 @@ const GPTSearchBar = () => {
     // });
 
     // Hard coding the movies list since this API is a paid API
-    const gptResults = "12th Fail, Andaz Apna Apna, Vikram Vedha, Chupke Chupke, Padosan";
+    const gptResults = "12th Fail, Titanic, Vikram Vedha, Chupke Chupke, Padosan";
     const gptMovies = gptResults.split(", ");
     
     // For each movie, we will search TMDB API
@@ -52,9 +52,9 @@ const GPTSearchBar = () => {
   };
 
   return (
-    <div className='pt-[10%] flex justify-center'>
+    <div className='pt-[35%] md:pt-[10%] flex justify-center'>
         <form 
-          className='w-1/2 bg-black grid grid-cols-12' 
+          className='w-full md:w-1/2 bg-black grid grid-cols-12' 
           onSubmit={e => e.preventDefault()}
         >
             <input 
